@@ -1,4 +1,5 @@
 #ifndef MAINWINDOW_H
+
 #define MAINWINDOW_H
 
 #include <QMainWindow>
@@ -7,7 +8,7 @@
 #include <QMenu>
 #include <QAction>
 #include <QPoint>
-#include <QIcon>
+
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
 QT_END_NAMESPACE

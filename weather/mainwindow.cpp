@@ -13,8 +13,9 @@ MainWindow::MainWindow(QWidget *parent)
     //右键退出
     exitMenu = new QMenu(this);
     exitAct = new QAction;
-    exitAct->setText("exit");
+    exitAct->setText(tr("Exit"));
     exitAct->setIcon(QIcon(":/weatherIco/close.ico"));
+    exitMenu->addAction(exitAct);
     connect(exitAct,SIGNAL(triggered(bool)),this,SLOT(slot_exitApp()));
 
 }
