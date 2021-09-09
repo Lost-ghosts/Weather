@@ -10,6 +10,9 @@
     <height>450</height>
    </rect>
   </property>
+  <property name="cursor">
+   <cursorShape>OpenHandCursor</cursorShape>
+  </property>
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
@@ -51,7 +54,7 @@ Line{
     <widget class="QLineEdit" name="cityLineEdit">
      <property name="geometry">
       <rect>
-       <x>570</x>
+       <x>580</x>
        <y>10</y>
        <width>171</width>
        <height>31</height>
@@ -240,10 +243,10 @@ background-color: rgba(255, 255, 255, 0);</string>
     <widget class="QWidget" name="gridLayoutWidget_2">
      <property name="geometry">
       <rect>
-       <x>200</x>
+       <x>180</x>
        <y>50</y>
-       <width>160</width>
-       <height>61</height>
+       <width>90</width>
+       <height>31</height>
       </rect>
      </property>
      <layout class="QGridLayout" name="gridLayout_2">
@@ -315,7 +318,7 @@ background-color: rgba(60, 60, 60, 0);</string>
        </widget>
       </item>
       <item row="1" column="2">
-       <widget class="QLabel" name="data2Lb">
+       <widget class="QLabel" name="date2Lb">
         <property name="text">
          <string>03/03</string>
         </property>
@@ -365,7 +368,7 @@ background-color: rgba(60, 60, 60, 0);</string>
        </widget>
       </item>
       <item row="1" column="1">
-       <widget class="QLabel" name="data1Lb">
+       <widget class="QLabel" name="date1Lb">
         <property name="text">
          <string>02/02</string>
         </property>
@@ -414,7 +417,7 @@ background-color: rgba(60, 60, 60, 0);</string>
        </widget>
       </item>
       <item row="1" column="4">
-       <widget class="QLabel" name="data4Lb">
+       <widget class="QLabel" name="date4Lb">
         <property name="text">
          <string>05/05</string>
         </property>
@@ -477,7 +480,7 @@ background-color: rgba(60, 60, 60, 0);</string>
        </widget>
       </item>
       <item row="1" column="5">
-       <widget class="QLabel" name="data5Lb">
+       <widget class="QLabel" name="date5Lb">
         <property name="text">
          <string>06/06</string>
         </property>
@@ -510,7 +513,7 @@ background-color: rgba(60, 60, 60, 0);</string>
        </widget>
       </item>
       <item row="1" column="0">
-       <widget class="QLabel" name="data0Lb">
+       <widget class="QLabel" name="date0Lb">
         <property name="text">
          <string>01/01</string>
         </property>
@@ -626,7 +629,7 @@ background-color: rgba(60, 60, 60, 0);</string>
        </widget>
       </item>
       <item row="1" column="3">
-       <widget class="QLabel" name="data3Lb">
+       <widget class="QLabel" name="date3Lb">
         <property name="text">
          <string>04/04</string>
         </property>
@@ -843,7 +846,7 @@ background-color: rgba(60, 60, 60, 0);</string>
 background-color: rgba(60, 60, 60, 0);</string>
      </property>
      <property name="text">
-      <string>TextLabel</string>
+      <string/>
      </property>
     </widget>
     <widget class="QLabel" name="noticeLb">
@@ -882,11 +885,14 @@ background-color: rgba(60, 60, 60, 0);</string>
        <x>10</x>
        <y>340</y>
        <width>191</width>
-       <height>164</height>
+       <height>101</height>
       </rect>
      </property>
      <layout class="QGridLayout" name="gridLayout_4">
-      <item row="1" column="0">
+      <item row="0" column="1">
+       <widget class="QTextBrowser" name="ganmaoBrowser"/>
+      </item>
+      <item row="0" column="0">
        <widget class="QLabel" name="label_2">
         <property name="styleSheet">
          <string notr="true">background-color: rgba(60, 60, 60, 130);
@@ -895,38 +901,97 @@ color: rgb(255,255,255);
 </string>
         </property>
         <property name="text">
-         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;感&lt;/p&gt;&lt;p&gt;冒&lt;/p&gt;&lt;p&gt;指&lt;/p&gt;&lt;p&gt;数&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;感&lt;br/&gt;冒&lt;br/&gt;指&lt;br/&gt;数&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
         </property>
         <property name="alignment">
          <set>Qt::AlignCenter</set>
-        </property>
-       </widget>
-      </item>
-      <item row="1" column="1">
-       <widget class="QLabel" name="label_3">
-        <property name="styleSheet">
-         <string notr="true">background-color: rgba(60, 60, 60, 130);
-border-radius: 3px;
-color: rgb(255,255,255);
-</string>
-        </property>
-        <property name="text">
-         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;感&lt;/p&gt;&lt;p&gt;冒&lt;/p&gt;&lt;p&gt;指&lt;/p&gt;&lt;p&gt;数&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-        </property>
-        <property name="alignment">
-         <set>Qt::AlignCenter</set>
-        </property>
-       </widget>
-      </item>
-      <item row="0" column="1">
-       <widget class="QLabel" name="label_4">
-        <property name="text">
-         <string>TextLabel</string>
         </property>
        </widget>
       </item>
      </layout>
     </widget>
+    <widget class="QToolButton" name="searchBt">
+     <property name="geometry">
+      <rect>
+       <x>722</x>
+       <y>15</y>
+       <width>20</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="cursor">
+      <cursorShape>PointingHandCursor</cursorShape>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border-image: url(:/weatherIco/search.ico);</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+    <widget class="QToolButton" name="refreshBt">
+     <property name="geometry">
+      <rect>
+       <x>753</x>
+       <y>10</y>
+       <width>37</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="cursor">
+      <cursorShape>PointingHandCursor</cursorShape>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">image: url(:/weatherIco/refresh.ico);
+background-color: rgba(255, 255, 255, 0);</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="icon">
+      <iconset resource="icons/icons.qrc">
+       <normaloff>:/weatherIco/refresh.ico</normaloff>:/weatherIco/refresh.ico</iconset>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>31</width>
+       <height>31</height>
+      </size>
+     </property>
+    </widget>
+    <widget class="QLabel" name="sunRiseSetLb">
+     <property name="geometry">
+      <rect>
+       <x>210</x>
+       <y>340</y>
+       <width>150</width>
+       <height>100</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+    <zorder>dateLb</zorder>
+    <zorder>cityLineEdit</zorder>
+    <zorder>hLine_1</zorder>
+    <zorder>hLine_10</zorder>
+    <zorder>hLine_11</zorder>
+    <zorder>titleLb</zorder>
+    <zorder>gridLayoutWidget</zorder>
+    <zorder>gridLayoutWidget_2</zorder>
+    <zorder>gridLayoutWidget_3</zorder>
+    <zorder>leafLb</zorder>
+    <zorder>qualityLb</zorder>
+    <zorder>temLb</zorder>
+    <zorder>typeLb</zorder>
+    <zorder>typeIcoLb</zorder>
+    <zorder>noticeLb</zorder>
+    <zorder>vLine_1</zorder>
+    <zorder>gridLayoutWidget_4</zorder>
+    <zorder>searchBt</zorder>
+    <zorder>refreshBt</zorder>
+    <zorder>sunRiseSetLb</zorder>
    </widget>
   </widget>
   <widget class="QStatusBar" name="statusbar">
@@ -940,6 +1005,8 @@ color: rgb(255,255,255);
    </property>
   </widget>
  </widget>
- <resources/>
+ <resources>
+  <include location="icons/icons.qrc"/>
+ </resources>
  <connections/>
 </ui>

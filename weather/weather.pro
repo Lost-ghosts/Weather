@@ -1,4 +1,4 @@
-QT       += core gui
+QT       += core gui network
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -10,10 +10,13 @@ CONFIG += c++11
 
 SOURCES += \
     main.cpp \
-    mainwindow.cpp
+    mainwindow.cpp \
+    weatherdata.cpp
 
 HEADERS += \
-    mainwindow.h
+    mainwindow.h \
+    weatherdata.h \
+    weathertool.h
 
 FORMS += \
     mainwindow.ui
