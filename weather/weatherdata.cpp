@@ -23,6 +23,7 @@ Today::Today()
     sunset = "00:00";
     wendu = "null";
     type = u8"无数据";
+
 }
 
 Today &Today::operator=(const QJsonObject &jsObj)
@@ -31,7 +32,7 @@ Today &Today::operator=(const QJsonObject &jsObj)
     date = QDate::fromString(dateStr, "yyyyMMdd").toString("yyyy-MM-dd");
     city = jsObj.value("cityInfo").toObject().value("city").toString();
 
-    // 解析data
+    //解析data
     QJsonObject dataObj = jsObj.value("data").toObject();
     shidu = dataObj.value("shidu").toString();
     pm25 = QString::number( dataObj.value("pm25").toDouble() );
@@ -57,6 +58,7 @@ Forecast::Forecast()
     high = u8"高温 0.0℃";
     low = u8"低温 0.0℃";
     type = "undefined";
+
 }
 
 Forecast &Forecast::operator=(const QJsonObject &obj)

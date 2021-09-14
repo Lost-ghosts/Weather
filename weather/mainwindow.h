@@ -15,6 +15,8 @@
 #include <QNetworkReply>
 #include <QNetworkRequest>
 #include <QByteArray>
+#include <QPainter>
+#include <QTimer>
 #include "weatherdata.h"
 
 QT_BEGIN_NAMESPACE
@@ -29,40 +31,56 @@ class MainWindow : public QWidget
 public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
+    virtual bool eventFilter(QObject *watched, QEvent *event);
+
 protected:
+
     void mouseMoveEvent(QMouseEvent *event);
     void mousePressEvent(QMouseEvent *event);
     void contextMenuEvent(QContextMenuEvent *event);
     void getWeatherInfo(QNetworkAccessManager *manager);
     void parseJson(QByteArray& bytes);
     void setLabelContent();
+    void paintSunRiseSet();
+    void paintCurve();
 private slots:
     void slot_exitApp();
     void replayFinished(QNetworkReply* reply);
+    void on_refreshBt_clicked();
+
+    void on_searchBt_clicked();
+
 private:
     Ui::MainWindow *ui;
-    QMenu *exitMenu;    //å³é”®é€€å‡ºçš„èœå•
-    QAction *exitAct;   //é€€å‡ºçš„è¡Œä¸º
-    QPoint mPos;        //çª—å£ç§»åŠ¨éœ€è¦çš„ç‚¹
-    //uiåˆ—è¡¨
-    QList<QLabel *> forecast_week_list;         //æ˜ŸæœŸ
-    QList<QLabel *> forecast_date_list;         //æ—¥æœŸ
-    QList<QLabel *> forecast_aqi_list;          //å¤©æ°”æŒ‡æ•°
-    QList<QLabel *> forecast_type_list;         //å¤©æ°”
-    QList<QLabel *> forecast_typeIco_list;      //å¤©æ°”å›¾æ ‡
-    QList<QLabel *> forecast_high_list;         //é«˜æ¸©
-    QList<QLabel *> forecast_low_list;          //ä½æ¸©
+    QMenu *exitMenu;    //ÓÒ¼üÍË³öµÄ²Ëµ¥
+    QAction *exitAct;   //ÍË³öµÄĞĞÎª
+    QPoint mPos;        //´°¿ÚÒÆ¶¯ĞèÒªµÄµã
+    //uiÁĞ±í
+    QList<QLabel *> forecast_week_list;         //ĞÇÆÚ
+    QList<QLabel *> forecast_date_list;         //ÈÕÆÚ
+    QList<QLabel *> forecast_aqi_list;          //ÌìÆøÖ¸Êı
+    QList<QLabel *> forecast_type_list;         //ÌìÆø
+    QList<QLabel *> forecast_typeIco_list;      //ÌìÆøÍ¼±ê
+    QList<QLabel *> forecast_high_list;         //¸ßÎÂ
+    QList<QLabel *> forecast_low_list;          //µÍÎÂ
 
-    QString url;            //æ¥å£è¿æ¥
-    QString city;           //è®¿é—®çš„åŸå¸‚
-    QString cityTmp;        //ä¸´æ—¶å­˜æ”¾åŸå¸‚å˜é‡,é˜²æ­¢è¾“å…¥é”™è¯¯åŸå¸‚çš„æ—¶å€™,åŸæ¥çš„åŸå¸‚åç§°è¿˜åœ¨ã€‚
-    WeatherTool tool;       //å¤©æ°”å·¥å…·å¯¹è±¡
+    QString url;            //½Ó¿ÚÁ¬½Ó
+    QString city;           //·ÃÎÊµÄ³ÇÊĞ
+    QString cityTmp;        //ÁÙÊ±´æ·Å³ÇÊĞ±äÁ¿,·ÀÖ¹ÊäÈë´íÎó³ÇÊĞµÄÊ±ºò,Ô­À´µÄ³ÇÊĞÃû³Æ»¹ÔÚ¡£
+    WeatherTool tool;       //ÌìÆø¹¤¾ß¶ÔÏó
 
     QNetworkAccessManager* manager;
 
-    //æœ¬åœ°æ•°æ®
+    //±¾µØÊı¾İ
     Today today;
     Forecast forecast[6];
+
+    //
+    static const QPoint sun[2];             //ÈÕ³öÈÕÂäµ×Ïß
+    static const QRect sunRizeSet[2];       //ÈÕ³öÈÕÂäÊ±¼ä
+    static const QRect rect[2];             //ÈÕ³öÈÕÂäÔ²»¡
+
+    QTimer* sunTimer;
 
 };
 #endif // MAINWINDOW_H

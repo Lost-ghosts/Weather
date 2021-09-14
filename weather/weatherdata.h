@@ -4,38 +4,38 @@
 #include <QObject>
 #include <QWidget>
 #pragma execution_character_set("utf-8")
-class Today//å½“æ—¥å¤©æ°”é¢„æŠ¥çš„æ•°æ®
+class Today//µ±ÈÕÌìÆøÔ¤±¨µÄÊı¾İ
 {
 public:
     Today();
     Today& operator=(const QJsonObject& obj);
-    QString date;//æ—¥æœŸ
-    QString wendu;//æ¸©åº¦
-    QString city;//åŸå¸‚
-    QString shidu;//æ¹¿åº¦
+    QString date;//ÈÕÆÚ
+    QString wendu;//ÎÂ¶È
+    QString city;//³ÇÊĞ
+    QString shidu;//Êª¶È
     QString pm25;//pm2.5
-    QString quality;//è´¨é‡
-    QString ganmao;//æ„Ÿå†’æŒ‡æ•°
-    QString fx;//é£å‘
-    QString fl;//é£åŠ›
-    QString type;//å¤©æ°”
-    QString sunrise;//æ—¥å‡ºæ—¶é—´
-    QString sunset;//æ—¥è½æ—¶é—´
-    QString notice;//æ³¨æ„ä¿¡æ¯
+    QString quality;//ÖÊÁ¿
+    QString ganmao;//¸ĞÃ°Ö¸Êı
+    QString fx;//·çÏò
+    QString fl;//·çÁ¦
+    QString type;//ÌìÆø
+    QString sunrise;//ÈÕ³öÊ±¼ä
+    QString sunset;//ÈÕÂäÊ±¼ä
+    QString notice;//×¢ÒâĞÅÏ¢
 };
 
-class Forecast//é¢„æŠ¥æ•°æ®
+class Forecast//Ô¤±¨Êı¾İ
 {
 public:
     Forecast();
-    //é‡è½½=å·æ“ä½œç¬¦
+    //ÖØÔØ=ºÅ²Ù×÷·û
     Forecast& operator=(const QJsonObject& obj);
-    QString date;   //æ—¥æœŸ
-    QString week;   //æ˜ŸæœŸ
-    QString high;   //é«˜æ¸©
-    QString low;    //ä½æ¸©
-    QString aqi;    //è´¨é‡
-    QString type;   //å¤©æ°”
+    QString date;   //ÈÕÆÚ
+    QString week;   //ĞÇÆÚ
+    QString high;   //¸ßÎÂ
+    QString low;    //µÍÎÂ
+    QString aqi;    //ÖÊÁ¿
+    QString type;   //ÌìÆø
 };
 
 
